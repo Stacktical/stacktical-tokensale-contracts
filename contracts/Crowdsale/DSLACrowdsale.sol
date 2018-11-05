@@ -198,19 +198,26 @@ contract DSLACrowdsale is VestedCrowdsale, Whitelist, Pausable, PullPayment {
 
     /**
       * @dev Function to finalize the crowdsale
+      * @param _burn bool burn unsold tokens when true
       * @return True bool
       */
-    function finalizeCrowdsale() public onlyOwner returns(bool) {
+    function finalizeCrowdsale(bool _burn) public onlyOwner returns(bool) {
         require(currentIcoRound == 4 && !isRefunding);
 
         if (raisedFunds() < icoRounds[3].softCap) {
             isRefunding = true;
             refundDeadline = block.timestamp + 4 weeks;
-        } else {
-            require(!isFinalized);
-            _withdrawFunds(wallet());
+
+            return true;
+        }
+
+        require(!isFinalized);
+
+        _withdrawFunds(wallet());
+        isFinalized = true;
+
+        if (_burn) {
             _burnUnsoldTokens();
-            isFinalized = true;
         }
 
         return  true;

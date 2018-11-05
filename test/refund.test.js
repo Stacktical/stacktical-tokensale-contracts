@@ -55,7 +55,7 @@ contract('Refund', function ([owner, project, anotherAccount, user1, user2, wall
 
             await crowdsale.closeCrowdsale({from : owner});
 
-            await crowdsale.finalizeCrowdsale({from : owner});
+            await crowdsale.finalizeCrowdsale(true, {from : owner});
 
             // claim a refund
             await assertRevert(crowdsale.claimRefund({from : user1}));
@@ -79,7 +79,7 @@ contract('Refund', function ([owner, project, anotherAccount, user1, user2, wall
 
             await crowdsale.closeCrowdsale({from : owner});
 
-            await crowdsale.finalizeCrowdsale({from : owner});
+            await crowdsale.finalizeCrowdsale(true, {from : owner});
 
             // claim a refund
             await crowdsale.claimRefund({from : user1, gasPrice : 0});
@@ -109,7 +109,7 @@ contract('Refund', function ([owner, project, anotherAccount, user1, user2, wall
             assert.equal(await crowdsale.raisedFunds.call().valueOf(), paymentAmount.valueOf());
 
             await crowdsale.closeCrowdsale({from : owner});
-            await crowdsale.finalizeCrowdsale({from : owner});
+            await crowdsale.finalizeCrowdsale(true, {from : owner});
 
             // claim a refund
             await crowdsale.claimRefund({from : user1, gasPrice : 0});
@@ -131,7 +131,7 @@ contract('Refund', function ([owner, project, anotherAccount, user1, user2, wall
 
             await crowdsale.closeCrowdsale({from : owner});
 
-            await crowdsale.finalizeCrowdsale({from : owner});
+            await crowdsale.finalizeCrowdsale(true, {from : owner});
 
             // increase time to after refund period
             await increaseTimeTo(latestTime() + duration.weeks(4));
@@ -153,7 +153,7 @@ contract('Refund', function ([owner, project, anotherAccount, user1, user2, wall
             await crowdsale.sendTransaction({ from: user1 , value: paymentAmount });
 
             await crowdsale.closeCrowdsale({from : owner});
-            await crowdsale.finalizeCrowdsale({from : owner});
+            await crowdsale.finalizeCrowdsale(true, {from : owner});
 
             // increase time to after refund period
             await increaseTimeTo(latestTime() + duration.weeks(5));
