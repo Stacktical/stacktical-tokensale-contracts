@@ -57,7 +57,7 @@ Watch out: Since the account will be deploying the Smart Contracts, it will also
 
 ### Locally
 
-Please run `testrpc` in one console and `truffle test` to see the tests.
+Please run `ganache-cli -e 1000 -a 100` in one console and `truffle test` to see the tests.
 
 ### Testnet & Mainnet
 
