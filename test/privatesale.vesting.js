@@ -2,7 +2,7 @@ import assertRevert from './helpers/assertRevert';
 import latestTime from './helpers/latestTime';
 import { increaseTimeTo, duration } from './helpers/increaseTime';
 
-const Token = artifacts.require('./DSLA.sol');
+const Token = artifacts.require('./DSLAMock.sol');
 const Crowdsale = artifacts.require('./DSLACrowdsale.sol');
 const BigNumber = web3.BigNumber;
 
@@ -14,14 +14,11 @@ contract('Vesting', function ([owner, project, anotherAccount, user1, user2, wal
     const june30 =  1561881600;
     const sept30 =  1569830400;
 
-
     describe('Vesting process for private sale period', function () {
         beforeEach('redeploy', async function () {
-            var releaseDate = latestTime() + duration.days(30);
-            token = await Token.new(releaseDate, {from : owner});
+            token = await Token.new({from : owner});
             crowdsale = await Crowdsale.new(wallet, token.address, {from : owner});
 
-            await token.setCrowdsaleAddress(crowdsale.address, {from : owner});
             await token.transfer(crowdsale.address, tokensToSell, {from : owner});
         });
         it('rejects claiming tokens from a conntributor of the privatesale before march31', async function () {

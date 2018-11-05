@@ -2,14 +2,13 @@ import assertRevert from './helpers/assertRevert';
 import latestTime from './helpers/latestTime';
 import { increaseTimeTo, duration } from './helpers/increaseTime';
 
-const Token = artifacts.require('./DSLA.sol');
+const Token = artifacts.require('./DSLAMock.sol');
 const Crowdsale = artifacts.require('./DSLACrowdsale.sol');
 const BigNumber = web3.BigNumber;
 
 contract('Refund', function ([owner, project, anotherAccount, user1, user2, wallet]) {
     let token;
     let crowdsale;
-    const releaseDate = 1546243200;
     const tokensToSell = new BigNumber('5e27');
     const rate = 250000;
     const individualFloor = web3.toWei('3', 'ether');
@@ -18,17 +17,10 @@ contract('Refund', function ([owner, project, anotherAccount, user1, user2, wall
     const hardCap = web3.toWei('17200', 'ether');
 
     beforeEach('redeploy', async function () {
-        token = await Token.new(releaseDate, {from : owner});
+        token = await Token.new({from : owner});
         crowdsale = await Crowdsale.new(wallet, token.address, {from : owner});
 
-        await token.setCrowdsaleAddress(crowdsale.address, {from : owner});
         await token.transfer(crowdsale.address, tokensToSell, {from : owner});
-    });
-
-    describe('Check if the crowdsale address is set', function () {
-        it('return the same address', async function () {
-            assert.equal(await token.crowdsaleAddress.call(), crowdsale.address);
-        });
     });
 
     describe('Refund period', function () {

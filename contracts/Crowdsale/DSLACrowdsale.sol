@@ -1,10 +1,10 @@
 pragma solidity 0.4.24;
 
-import "../DSLA/DSLA.sol";
 import "./PullPayment.sol";
 import "./VestedCrowdsale.sol";
 import "./Whitelist.sol";
 import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol";
 
 
 /**
@@ -25,7 +25,7 @@ contract DSLACrowdsale is VestedCrowdsale, Whitelist, Pausable, PullPayment {
     // mapping ico rounds
     mapping (uint256 => IcoRound) public icoRounds;
     // The token being sold
-    DSLA private _token;
+    ERC20Burnable private _token;
     // Address where funds are collected
     address private _wallet;
     // Amount of wei raised
@@ -63,7 +63,7 @@ contract DSLACrowdsale is VestedCrowdsale, Whitelist, Pausable, PullPayment {
       * @param wallet Address where collected funds will be forwarded to
       * @param token Address of the token being sold
       */
-    constructor(address wallet, DSLA token) public {
+    constructor(address wallet, ERC20Burnable token) public {
         require(wallet != address(0) && token != address(0));
 
         icoRounds[1] = IcoRound(
@@ -245,7 +245,7 @@ contract DSLACrowdsale is VestedCrowdsale, Whitelist, Pausable, PullPayment {
       * @dev returns the token being sold
       * @return the token being sold
       */
-    function token() public view returns(DSLA) {
+    function token() public view returns(ERC20Burnable) {
         return _token;
     }
 
