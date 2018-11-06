@@ -69,7 +69,7 @@ contract DSLACrowdsale is VestedCrowdsale, Whitelist, Pausable, PullPayment {
         icoRounds[1] = IcoRound(
             416700,
             3 ether,
-            120 ether,
+            600 ether,
             0,
             1200 ether
         );
@@ -77,7 +77,7 @@ contract DSLACrowdsale is VestedCrowdsale, Whitelist, Pausable, PullPayment {
         icoRounds[2] = IcoRound(
             312500,
             12 ether,
-            360 ether,
+            5000 ether,
             0,
             6000 ether
         );
