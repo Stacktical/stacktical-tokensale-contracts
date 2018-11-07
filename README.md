@@ -3,17 +3,23 @@
 
 Stacktical is a french software company specialized in applying predictive and blockchain technologies to application and network performance management practices.
 
-Stacktical.com is a decentralized service level management platform that helps cloud service providers improve the reliability of their services, reward operational excellence and automatically compensate customers for slowdowns, downtimes and unresponsive customer support. 
+Stacktical.com is a decentralized service level management platform that helps cloud service providers improve the reliability of their services, reward operational excellence and automatically compensate customers for slowdowns, downtimes and unresponsive customer support.
+
+# Addresses
+
+**Ropsten**
+Token `0x446e5681cb934f5ca9f40262e337e77d16134e66`
+Crowdsale `0x029c467d43497e8caf2a7f386c7a62db20dc5091`
 
 # DSLA Token Sale
 
-This repository contains the following:  
+This repository contains the following:
 
 ### - DSLA Token Smart Contract
-![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/DSLA/Token-describe.png)  
+![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/DSLA/Token-describe.png)
 
 ### - DSLA Sale Smart Contract
-![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/Crowdsale/Sale-describe.png)  
+![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/Crowdsale/Sale-describe.png)
 
 ### - Unit Tests
 ### - Deployment files
