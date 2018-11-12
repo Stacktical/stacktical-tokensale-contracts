@@ -12,8 +12,8 @@ module.exports =  function(deployer, network) {
         wallet = process.env.DSLA_WALLET_ADDRESS_ROPSTEN_DEV
         DSLATokenAddress = process.env.DSLA_TOKEN_ADDRESS_ROPSTEN_DEV
     } else if (network === 'mainnet') {
-        wallet = process.env.DSLA_WALLET_ADDRESS_ROPSTEN_PROD
-        DSLATokenAddress = process.env.DSLA_TOKEN_ADDRESS_ROPSTEN_PROD
+        wallet = process.env.DSLA_WALLET_ADDRESS_PROD
+        DSLATokenAddress = process.env.DSLA_TOKEN_ADDRESS_PROD
     }
 
     return deployer.deploy(DSLACrowdsale, wallet, DSLATokenAddress)
