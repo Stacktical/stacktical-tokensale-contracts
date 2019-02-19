@@ -19,9 +19,8 @@ module.exports = {
             network_id: "*" // Match any network id
         },
         ropsten: {
-            provider: function() {
-                return new HDWalletProvider(mnemonic_dev, "https://ropsten.infura.io/" + infura_apikey_dev);
-            },
+            provider: () =>
+                new HDWalletProvider(mnemonic_dev, "https://ropsten.infura.io/" + infura_apikey_dev),
             network_id: "3",
             gas: 4612388
         },
