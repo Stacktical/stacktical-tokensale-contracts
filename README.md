@@ -7,9 +7,9 @@ Stacktical.com is a decentralized service level management platform that helps c
 
 # Addresses
 
-**Ropsten**
-Token `0x446e5681cb934f5ca9f40262e337e77d16134e66`
-Crowdsale `0x029c467d43497e8caf2a7f386c7a62db20dc5091`
+**Mainnnet**
+Token `0x3affcca64c2a6f4e3b6bd9c64cd2c969efd1ecbe`
+Crowdsale `0x3affcca64c2a6f4e3b6bd9c64cd2c969efd1ecbe`
 
 # DSLA Token Sale
 
@@ -51,6 +51,11 @@ export DSLA_INFURA_APIKEY_DEV=<your Infura API Key> \  # <== Your access token f
 export DSLA_INFURA_APIKEY_PROD=<your Infura API Key> \  # <== Your access token from Infura in MAINNET
 export DSLA_MNEMONIC_DEV="<your dev mnemonic>" \  #  <== The 12 mnemonic words of the account which will deploy the smart contracts in TESTNET
 export DSLA_MNEMONIC_PROD="<your PRODUCTION mnemonic>;"  # The 12 mnemonic words of the account which will deploy the smart contracts in MAINNET
+```
+For mainnet Deployment:
+```
+export DSLA_WALLET_ADDRESS_PROD="<The address of the contribution funds wallet>"
+export DSLA_TOKEN_ADDRESS_PROD="<Your PRODUCTION Token Smart Contract Address>"
 ```
 
 3/ Set the Smart contract parameters:
