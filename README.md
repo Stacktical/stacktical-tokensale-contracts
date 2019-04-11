@@ -3,17 +3,23 @@
 
 Stacktical is a french software company specialized in applying predictive and blockchain technologies to application and network performance management practices.
 
-Stacktical.com is a decentralized service level management platform that helps cloud service providers improve the reliability of their services, reward operational excellence and automatically compensate customers for slowdowns, downtimes and unresponsive customer support. 
+Stacktical.com is a decentralized service level management platform that helps cloud service providers improve the reliability of their services, reward operational excellence and automatically compensate customers for slowdowns, downtimes and unresponsive customer support.
+
+# ERC-20 Addresses
+
+**Mainnnet**
+Token `0x3affcca64c2a6f4e3b6bd9c64cd2c969efd1ecbe`
+Crowdsale `0xa3b7f0e143c62c260ce6d0f9c6b2d6dfd33c735d`
 
 # DSLA Token Sale
 
-This repository contains the following:  
+This repository contains the following:
 
 ### - DSLA Token Smart Contract
-![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/DSLA/Token-describe.png)  
+![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/DSLA/Token-describe.png)
 
 ### - DSLA Sale Smart Contract
-![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/Crowdsale/Sale-describe.png)  
+![My image](https://github.com/Stacktical/stacktical-token-sales/blob/surya-graph/contracts/Crowdsale/Sale-describe.png)
 
 ### - Unit Tests
 ### - Deployment files
@@ -45,6 +51,11 @@ export DSLA_INFURA_APIKEY_DEV=<your Infura API Key> \  # <== Your access token f
 export DSLA_INFURA_APIKEY_PROD=<your Infura API Key> \  # <== Your access token from Infura in MAINNET
 export DSLA_MNEMONIC_DEV="<your dev mnemonic>" \  #  <== The 12 mnemonic words of the account which will deploy the smart contracts in TESTNET
 export DSLA_MNEMONIC_PROD="<your PRODUCTION mnemonic>;"  # The 12 mnemonic words of the account which will deploy the smart contracts in MAINNET
+```
+For mainnet Deployment:
+```
+export DSLA_WALLET_ADDRESS_PROD="<The address of the contribution funds wallet>"
+export DSLA_TOKEN_ADDRESS_PROD="<Your PRODUCTION Token Smart Contract Address>"
 ```
 
 3/ Set the Smart contract parameters:
