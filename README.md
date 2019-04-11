@@ -5,11 +5,11 @@ Stacktical is a french software company specialized in applying predictive and b
 
 Stacktical.com is a decentralized service level management platform that helps cloud service providers improve the reliability of their services, reward operational excellence and automatically compensate customers for slowdowns, downtimes and unresponsive customer support.
 
-# Addresses
+# ERC-20 Addresses
 
 **Mainnnet**
 Token `0x3affcca64c2a6f4e3b6bd9c64cd2c969efd1ecbe`
-Crowdsale `0x3affcca64c2a6f4e3b6bd9c64cd2c969efd1ecbe`
+Crowdsale `0xa3b7f0e143c62c260ce6d0f9c6b2d6dfd33c735d`
 
 # DSLA Token Sale
 
