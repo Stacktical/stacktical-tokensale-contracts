@@ -1,4 +1,4 @@
-![STACKTICAL](https://storage.googleapis.com/stacktical-public/stacktical_logo-large_transparent_dark_text.png)
+![STACKTICAL](https://storage.googleapis.com/stacktical-public/stacktical_logo_v2-dark.png)
 # About Stacktical
 
 Stacktical is a french software company specialized in applying predictive and blockchain technologies to application and network performance management practices.
